@@ -5,7 +5,7 @@ const STEPS = [
         step: '01',
         icon: '📤',
         title: 'Upload APK',
-        desc: 'Drag & drop or select any Android APK file. We accept files up to 100 MB and never store your uploads permanently.',
+        desc: 'Drag & drop or select any Android APK file. We accept files up to 500 MB and never store your uploads permanently.',
         color: 'var(--accent-blue)',
         bg: 'rgba(37,99,235,0.06)',
         border: 'rgba(37,99,235,0.2)',

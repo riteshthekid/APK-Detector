@@ -29,7 +29,7 @@ from ml.feature_config import LEGITIMATE_BANKING_PACKAGES
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/analyze", tags=["Analysis"])
 
-MAX_FILE_SIZE_MB = 100
+MAX_FILE_SIZE_MB = 500
 
 
 # ── Progress steps shown to the frontend ─────────────────────────────────────

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 
-const MAX_SIZE_MB = 100;
+const MAX_SIZE_MB = 500;
 
 export default function UploadCard({ onUpload }) {
     const [dragging, setDragging] = useState(false);

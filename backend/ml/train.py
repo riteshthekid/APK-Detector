@@ -105,17 +105,17 @@ def generate_synthetic_dataset(n_samples: int = N_SAMPLES, seed: int = SEED):
         na = rng.integers(0, 3 if gray else 2)
         row[N_PERM + rng.choice(N_API, size=na, replace=False)] = 1
 
-        row[base+0]  = rng.integers(3, 20 if gray else 15)  # total_permissions
+        row[base+0]  = rng.integers(15, 60 if gray else 45) # total_permissions
         row[base+1]  = nd                                    # dangerous_perm_count
         row[base+2]  = na                                    # suspicious_api_count
-        row[base+3]  = rng.integers(0, 2)                   # suspicious_url_count
+        row[base+3]  = rng.integers(0, 4)                   # suspicious_url_count
         row[base+4]  = 0                                     # has_device_admin
         row[base+5]  = 0                                     # has_accessibility_service
-        row[base+6]  = rng.integers(0, 4)                   # exports_receivers
+        row[base+6]  = rng.integers(0, 15)                  # exports_receivers
         row[base+7]  = rng.integers(21, 33)                 # min_sdk
         row[base+8]  = rng.integers(30, 34)                 # target_sdk
-        row[base+9]  = 0                                     # uses_dex_loader
-        row[base+10] = 0 if not gray else rng.integers(0,2) # uses_reflection
+        row[base+9]  = rng.integers(0, 2)                   # uses_dex_loader
+        row[base+10] = rng.integers(0, 2)                   # uses_reflection
         row[base+11] = rng.integers(0, 2)                   # has_native_libs
 
         X.append(row); y.append(0)
@@ -132,13 +132,13 @@ def generate_synthetic_dataset(n_samples: int = N_SAMPLES, seed: int = SEED):
         na = rng.integers(1, 5) if stealthy else rng.integers(3, min(15, N_API)+1)
         row[N_PERM + rng.choice(N_API, size=na, replace=False)] = 1
 
-        row[base+0]  = rng.integers(8 if stealthy else 10, 30)  # total_permissions
+        row[base+0]  = rng.integers(20 if stealthy else 30, 80) # total_permissions
         row[base+1]  = nd
         row[base+2]  = na
         row[base+3]  = rng.integers(0 if stealthy else 1, 10)   # suspicious_url_count
         row[base+4]  = rng.integers(0, 2)                        # has_device_admin
         row[base+5]  = rng.integers(0, 2)                        # has_accessibility_service
-        row[base+6]  = rng.integers(1, 10)                       # exports_receivers
+        row[base+6]  = rng.integers(5, 25)                       # exports_receivers
         row[base+7]  = rng.integers(16, 26)                      # min_sdk
         row[base+8]  = rng.integers(26, 33)                      # target_sdk
         row[base+9]  = rng.integers(0, 2)                        # uses_dex_loader
